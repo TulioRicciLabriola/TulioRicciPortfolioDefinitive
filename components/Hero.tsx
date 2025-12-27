@@ -9,8 +9,7 @@ const Hero: React.FC<HeroProps> = ({ onNavClick }) => {
   const { t } = useLanguage();
 
   return (
-    /* AJUSTE AQUI: Aumentamos o pt- para garantir espaço para o Header fixo no Mobile e Desktop */
-    /* De pt-32 para pt-40 no mobile e md:pt-32 no desktop */
+    /* AJUSTE: pt-40 para mobile (abre espaço para o Header fixo) e md:pt-32 para desktop */
     <section className="relative min-h-screen flex flex-col justify-center px-6 md:px-12 lg:px-24 pt-40 md:pt-32 overflow-hidden bg-[#0E0E11]">
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <div className="absolute inset-0 z-0">
@@ -32,13 +31,14 @@ const Hero: React.FC<HeroProps> = ({ onNavClick }) => {
       </div>
 
       <div className="relative z-30 max-w-4xl">
-        {/* Ajuste de margem mb-6 para não empurrar o resto para fora da tela em celulares pequenos */}
+        {/* AJUSTE: mb-6 no mobile para não empurrar os botões para fora da tela */}
         <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.05] mb-6 md:mb-8 tracking-tighter text-[#F1F1F1] drop-shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
           {t.hero.title1} <br />
           <span className="text-white/40">{t.hero.titleHighlight}</span> <br />
           {t.hero.title2}
         </h1>
         
+        {/* AJUSTE: mb-8 no mobile */}
         <p className="text-base md:text-xl text-[#F1F1F1]/90 font-light mb-8 md:mb-12 max-w-xl leading-relaxed drop-shadow-xl">
           {t.hero.subtitle}
         </p>
@@ -61,10 +61,11 @@ const Hero: React.FC<HeroProps> = ({ onNavClick }) => {
         </div>
       </div>
       
+      {/* Botão Scroll: Escondido em telas muito pequenas (h < 600px) para limpar o visual */}
       <button 
         type="button"
         onClick={(e) => onNavClick(e, 'portfolio')}
-        className="absolute bottom-8 md:bottom-12 left-6 md:left-12 lg:left-24 flex items-center gap-6 group cursor-pointer z-30 opacity-40 hover:opacity-100 transition-opacity"
+        className="absolute bottom-8 md:bottom-12 left-6 md:left-12 lg:left-24 hidden xs:flex items-center gap-6 group cursor-pointer z-30 opacity-40 hover:opacity-100 transition-opacity"
       >
         <span className="text-[8px] uppercase tracking-[0.5em] font-bold text-[#F1F1F1]">Scroll</span>
         <div className="w-12 md:w-16 h-[1px] bg-white/20 relative overflow-hidden">
