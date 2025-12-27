@@ -1,4 +1,3 @@
-
 import React, { memo } from 'react';
 import { useLanguage } from '../LanguageContext';
 
@@ -10,7 +9,9 @@ const Hero: React.FC<HeroProps> = ({ onNavClick }) => {
   const { t } = useLanguage();
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-center px-6 md:px-12 lg:px-24 pt-32 md:pt-20 overflow-hidden bg-[#0E0E11]">
+    /* AJUSTE AQUI: Aumentamos o pt- para garantir espaço para o Header fixo no Mobile e Desktop */
+    /* De pt-32 para pt-40 no mobile e md:pt-32 no desktop */
+    <section className="relative min-h-screen flex flex-col justify-center px-6 md:px-12 lg:px-24 pt-40 md:pt-32 overflow-hidden bg-[#0E0E11]">
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <div className="absolute inset-0 z-0">
           <img 
@@ -31,13 +32,14 @@ const Hero: React.FC<HeroProps> = ({ onNavClick }) => {
       </div>
 
       <div className="relative z-30 max-w-4xl">
-        <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.05] mb-8 tracking-tighter text-[#F1F1F1] drop-shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
+        {/* Ajuste de margem mb-6 para não empurrar o resto para fora da tela em celulares pequenos */}
+        <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.05] mb-6 md:mb-8 tracking-tighter text-[#F1F1F1] drop-shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
           {t.hero.title1} <br />
           <span className="text-white/40">{t.hero.titleHighlight}</span> <br />
           {t.hero.title2}
         </h1>
         
-        <p className="text-base md:text-xl text-[#F1F1F1]/90 font-light mb-12 max-w-xl leading-relaxed drop-shadow-xl">
+        <p className="text-base md:text-xl text-[#F1F1F1]/90 font-light mb-8 md:mb-12 max-w-xl leading-relaxed drop-shadow-xl">
           {t.hero.subtitle}
         </p>
         
