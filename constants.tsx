@@ -8,24 +8,24 @@ export const TRANSLATIONS = {
       title1: 'Finalização de',
       titleHighlight: 'áudio profissional',
       title2: 'para publicidade.',
-      subtitle: 'Spots, filmes, branded content e social. Áudio pronto para aprovação — rápido, organizado e sem retrabalho.',
+      subtitle: 'Filmes, spots e conteúdo digital. Finalização profissional com foco em agilidade criativa e padrão internacional.',
       ctaWork: 'Ver trabalhos',
-      ctaContact: 'Falar comigo'
+      ctaContact: 'FAÇA SEU ORÇAMENTO'
     },
     portfolio: {
       title: 'TRABALHOS',
-      subtitle: 'Projetos selecionados com foco em eficiência e rigor técnico.',
+      subtitle: 'Assista ao showcase de projetos selecionados do meu portfólio',
       preview: 'Clique para assistir',
       showMore: 'Exibir Mais',
       showLess: 'Exibir Menos'
     },
     process: {
-      title: 'COMO TRABALHO',
+      title: 'COMO FUNCIONA',
       subtitle: 'Transparência, celeridade e maturidade técnica em cada entrega'
     },
     about: {
       title: 'SOBRE',
-      p1: 'Sou especialista em finalização de áudio publicitário, com foco em agilidade, consistência e fidelidade ao conceito criativo.',
+      p1: 'Mais de 10 anos de expertise em finalização de áudio publicitário, com foco em agilidade, consistência e fidelidade ao conceito criativo.',
       p2: 'Atuo em sintonia com os ritmos e exigências das grandes agências, compreendendo o que realmente funciona no fluxo de aprovação. Minha prioridade é o resultado final: som limpo, impactante e tecnicamente impecável.',
       item1Title: 'Prazos de Agência',
       item1Desc: 'Domínio total do cronograma publicitário, sem atrasos ou surpresas.',
@@ -33,14 +33,15 @@ export const TRANSLATIONS = {
       item2Desc: 'Alinhamento objetivo com produtoras e criativos, eliminando ruídos.',
       item3Title: 'Excelência Técnica',
       item3Desc: 'Loudness e mixagem otimizados para todos os meios (TV, Rádio e Web).',
-      quote: '"O som não deve apenas ser ouvido; ele deve comunicar a intenção exata da marca."'
+      quote: '"Não entrego apenas áudio; projeto a clareza sonora que a sua mensagem exige."'
     },
     contact: {
       title: 'CONTATO',
-      whatsappLabel: 'Imediato',
-      emailLabel: 'Profissional',
-      linkedinLabel: 'Network',
-      footerRights: '© 2025 • Tulio Ricci • Crafted for Excellence',
+      subtitle: 'Faça seu orçamento',
+      whatsappLabel: '',
+      emailLabel: '',
+      linkedinLabel: '',
+      footerRights: '© 2025 • Tulio Ricci',
       floatCta: 'Vamos conversar?'
     }
   },
@@ -50,24 +51,24 @@ export const TRANSLATIONS = {
       title1: 'Professional',
       titleHighlight: 'audio finishing',
       title2: 'for advertising.',
-      subtitle: 'Spots, films, branded content and social. Audio ready for approval — fast, organized and hassle-free.',
+      subtitle: 'Films, spots and digital content. Professional finishing focused on creative agility and international standards.',
       ctaWork: 'Watch films',
-      ctaContact: 'Get in touch'
+      ctaContact: 'GET A QUOTE'
     },
     portfolio: {
       title: 'WORK',
-      subtitle: 'Selected works focused on efficiency and technical quality.',
+      subtitle: 'Watch the showcase of selected projects from my portfolio',
       preview: 'Click to play',
       showMore: 'Show More',
       showLess: 'Show Less'
     },
     process: {
-      title: 'HOW I WORK',
+      title: 'HOW IT WORKS',
       subtitle: 'Transparency, speed, and technical maturity in every delivery'
     },
     about: {
       title: 'ABOUT',
-      p1: 'I specialize in audio finishing for advertising, focused on agility, technical consistency and respect for the creative concept.',
+      p1: 'Over 10 years of expertise in advertising audio finishing, focused on agility, consistency and respect for the creative concept.',
       p2: 'I work in sync with the high-pressure environment of top agencies, understanding what truly works in the approval workflow. My priority is the final result: clean, impactful and technically flawless sound.',
       item1Title: 'Agency Deadlines',
       item1Desc: 'Complete mastery of the advertising schedule, without delays or surprises.',
@@ -75,14 +76,15 @@ export const TRANSLATIONS = {
       item2Desc: 'Objective alignment with production houses and creatives, eliminating noise.',
       item3Title: 'Technical Excellence',
       item3Desc: 'Optimized loudness and mixing for all media (TV, Radio and Web).',
-      quote: '"Sound shouldn\'t just be heard; it must communicate the brand\'s exact intention."'
+      quote: '"I don\'t just deliver audio; I project the sonic clarity your message demands."'
     },
     contact: {
       title: 'CONTACT',
-      whatsappLabel: 'Instant',
-      emailLabel: 'Professional',
-      linkedinLabel: 'Network',
-      footerRights: '© 2025 • Tulio Ricci • Crafted for Excellence',
+      subtitle: 'Get a quote',
+      whatsappLabel: '',
+      emailLabel: '',
+      linkedinLabel: '',
+      footerRights: '© 2025 • Tulio Ricci',
       floatCta: 'Let\'s talk?'
     }
   }
@@ -225,16 +227,14 @@ export const PORTFOLIO_DATA: Record<'pt' | 'en', PortfolioItem[]> = {
 
 export const PROCESS_STEPS: Record<'pt' | 'en', ProcessStep[]> = {
   pt: [
-    { id: 1, title: 'Briefing Ágil', description: 'Alinhamento rápido para captar a intenção criativa e técnica.' },
-    { id: 2, title: 'Pós-Produção', description: 'Produção de trilhas e jingles, edição, tratamento e sound design através de ferramentas de topo de linha e recursos de IA.' },
-    { id: 3, title: 'Mixagem & Master', description: 'Ajuste final de planos sonoros e normalização para aprovação imediata.' },
-    { id: 4, title: 'Entrega Técnica', description: 'Arquivos em todos os formatos exigidos pelo mercado (TV/Rádio/Web).' }
+    { id: 1, title: 'BRIEFING', description: 'Você me passa sua intenção criativa e técnica para fechamos seu orçamento.' },
+    { id: 2, title: 'PRODUÇÃO', description: 'Eu inicio o processo de produção: trilhas e jingles, edição, sound design, tratamento e mixagem através de ferramentas de topo de linha e recursos de IA.' },
+    { id: 3, title: 'ENTREGA', description: 'Eu masterizo seus áudios para todos os formatos exigidos pelo mercado (TV/Rádio/Web).' }
   ],
   en: [
-    { id: 1, title: 'Agile Briefing', description: 'Quick alignment to capture creative and technical intentions.' },
-    { id: 2, title: 'Post-Production', description: 'Production of soundtracks and jingles, editing, treatment and sound design through top-of-the-line tools and AI resources.' },
-    { id: 3, title: 'Mix & Master', description: 'Final sound level adjustments and normalization for immediate approval.' },
-    { id: 4, title: 'Technical Delivery', description: 'Files in all formats required by the market (TV/Radio/Web).' }
+    { id: 1, title: 'BRIEFING', description: 'You provide your creative and technical intent so we can finalize your quote.' },
+    { id: 2, title: 'PRODUCTION', description: 'I begin the production process: tracks and jingles, editing, sound design, treatment and mixing using top-of-the-line tools and AI features.' },
+    { id: 3, title: 'DELIVERY', description: 'I master your audio for all market-required formats (TV/Radio/Web).' }
   ]
 };
 

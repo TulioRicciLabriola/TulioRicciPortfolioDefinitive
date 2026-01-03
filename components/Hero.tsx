@@ -1,45 +1,83 @@
-import React, { memo } from 'react';
+
+import React, { memo, useState, useEffect, useMemo } from 'react';
 import { useLanguage } from '../LanguageContext';
+import { PORTFOLIO_DATA } from '../constants';
 
 interface HeroProps {
   onNavClick: (e: React.MouseEvent<HTMLAnchorElement> | React.MouseEvent<HTMLButtonElement>, id: string) => void;
 }
 
 const Hero: React.FC<HeroProps> = ({ onNavClick }) => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const [currentThumbIndex, setCurrentThumbIndex] = useState(0);
+
+  const thumbnails = useMemo(() => {
+    return PORTFOLIO_DATA[language].map(item => item.thumbnail);
+  }, [language]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentThumbIndex((prev) => (prev + 1) % thumbnails.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [thumbnails.length]);
 
   return (
-    /* AJUSTE: pt-40 para mobile (abre espaço para o Header fixo) e md:pt-32 para desktop */
-    <section className="relative min-h-screen flex flex-col justify-center px-6 md:px-12 lg:px-24 pt-40 md:pt-32 overflow-hidden bg-[#0E0E11]">
+    <section className="relative min-h-screen md:min-h-screen lg:min-h-screen flex flex-col justify-center px-6 md:px-12 lg:px-24 pt-28 md:pt-32 overflow-hidden bg-[#0E0E11]" style={{ minHeight: '100dvh' }}>
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        
+        {/* CAMADA 1: Floresta Estática (Fundo Base) */}
         <div className="absolute inset-0 z-0">
           <img 
             src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?q=80&w=2000&auto=format&fit=crop" 
-            alt="Dense Pine Forest Atmosphere" 
-            loading="eager"
-            className="w-full h-full object-cover opacity-50 brightness-[0.45] saturate-[0.8] scale-105 animate-[slowZoom_40s_infinite_alternate] ease-in-out"
+            alt="" 
+            className="w-full h-full object-cover opacity-20 brightness-[0.3] saturate-[0.3] scale-110"
           />
         </div>
 
-        <div className="absolute inset-0 z-10 bg-[radial-gradient(circle_at_60%_50%,_transparent_0%,_#0E0E11_90%)]"></div>
-        <div className="absolute inset-0 z-10 bg-gradient-to-t from-[#0E0E11] via-transparent to-transparent opacity-80"></div>
-        <div className="absolute -top-[10%] -left-[5%] w-[60%] h-[70%] bg-[radial-gradient(circle,_rgba(100,120,180,0.08)_0%,_transparent_70%)] blur-[120px] animate-pulse pointer-events-none" style={{ animationDuration: '15s' }}></div>
-        <div className="absolute inset-0 opacity-[0.02] pointer-events-none z-20" 
-             style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)', backgroundSize: '120px 120px' }}>
+        {/* CAMADA 2: Showreel de Thumbnails (Sincronizado e Sem Resets) */}
+        <div className="absolute inset-0 z-10 overflow-hidden">
+          {thumbnails.map((thumb, idx) => (
+            <div 
+              key={idx}
+              className={`absolute inset-0 transition-opacity duration-[2500ms] ease-in-out ${
+                idx === currentThumbIndex ? 'opacity-70' : 'opacity-0'
+              }`}
+            >
+              <img 
+                src={thumb} 
+                alt="" 
+                className="w-full h-full object-cover mix-blend-lighten brightness-[0.7] saturate-[0.9] animate-kenburns-constant"
+                style={{ 
+                  willChange: 'transform, opacity',
+                  backfaceVisibility: 'hidden',
+                  transform: 'translate3d(0,0,0)'
+                }}
+              />
+            </div>
+          ))}
         </div>
-        <div className="absolute inset-0 z-20 opacity-[0.03] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
+
+        {/* CAMADA 3: Overlays de Design para Contraste */}
+        <div className="absolute inset-0 z-20 bg-[radial-gradient(circle_at_60%_50%,_transparent_0%,_#0E0E11_95%)]"></div>
+        <div className="absolute inset-0 z-20 bg-gradient-to-t from-[#0E0E11] via-transparent to-transparent opacity-95"></div>
+        
+        {/* Glow Azul Sutil */}
+        <div className="absolute -top-[10%] -left-[5%] w-[60%] h-[70%] bg-[radial-gradient(circle,_rgba(100,120,180,0.12)_0%,_transparent_70%)] blur-[120px] animate-pulse pointer-events-none z-20" style={{ animationDuration: '10s' }}></div>
+        
+        {/* Textura de Grão Profissional */}
+        <div className="absolute inset-0 z-25 opacity-[0.05] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
       </div>
 
+      {/* Conteúdo Principal (Letreiro Superior) */}
       <div className="relative z-30 max-w-4xl">
-        {/* AJUSTE: mb-6 no mobile para não empurrar os botões para fora da tela */}
-        <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.05] mb-6 md:mb-8 tracking-tighter text-[#F1F1F1] drop-shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
+        <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.05] mb-6 md:mb-8 tracking-tighter text-[#F1F1F1] drop-shadow-[0_10px_40px_rgba(0,0,0,1)]">
           {t.hero.title1} <br />
           <span className="text-white/40">{t.hero.titleHighlight}</span> <br />
           {t.hero.title2}
         </h1>
         
-        {/* AJUSTE: mb-8 no mobile */}
-        <p className="text-base md:text-xl text-[#F1F1F1]/90 font-light mb-8 md:mb-12 max-w-xl leading-relaxed drop-shadow-xl">
+        <p className="text-sm md:text-xl text-[#F1F1F1]/95 font-light mb-8 md:mb-12 max-w-xl leading-relaxed drop-shadow-[0_5px_20px_rgba(0,0,0,1)]">
           {t.hero.subtitle}
         </p>
         
@@ -47,21 +85,21 @@ const Hero: React.FC<HeroProps> = ({ onNavClick }) => {
           <button 
             type="button"
             onClick={(e) => onNavClick(e, 'portfolio')}
-            className="w-full sm:w-auto px-10 md:px-14 py-4 md:py-5 bg-[#F1F1F1] text-black text-center font-bold uppercase tracking-[0.2em] text-[9px] md:text-[10px] hover:bg-white transition-all active:scale-95 shadow-[0_20px_50px_rgba(0,0,0,0.6)]"
+            className="w-full sm:w-auto px-10 md:px-14 py-4 md:py-5 bg-[#F1F1F1] text-black text-center font-bold uppercase tracking-[0.2em] text-[9px] md:text-[10px] hover:bg-white transition-all active:scale-95 shadow-[0_20px_50px_rgba(0,0,0,0.8)]"
           >
             {t.hero.ctaWork}
           </button>
           <button 
             type="button"
             onClick={(e) => onNavClick(e, 'contact')}
-            className="w-full sm:w-auto text-[#F1F1F1]/70 hover:text-white transition-all font-bold uppercase tracking-[0.3em] text-[9px] md:text-[10px] border-b border-transparent hover:border-white/20 pb-1 text-center"
+            className="w-full sm:w-auto text-[#F1F1F1]/80 hover:text-white transition-all font-bold uppercase tracking-[0.3em] text-[9px] md:text-[10px] border-b border-transparent hover:border-white/20 pb-1 text-center"
           >
             {t.hero.ctaContact}
           </button>
         </div>
       </div>
       
-      {/* Botão Scroll: Escondido em telas muito pequenas (h < 600px) para limpar o visual */}
+      {/* Indicador de Scroll */}
       <button 
         type="button"
         onClick={(e) => onNavClick(e, 'portfolio')}
@@ -78,9 +116,13 @@ const Hero: React.FC<HeroProps> = ({ onNavClick }) => {
           0% { transform: translateX(-100%); }
           100% { transform: translateX(100%); }
         }
-        @keyframes slowZoom {
-          0% { transform: scale(1.0); }
-          100% { transform: scale(1.1); }
+        /* Animação constante aplicada a todas as camadas para evitar saltos na transição */
+        @keyframes kenburns-constant {
+          0% { transform: scale(1.05) translate(0, 0); }
+          100% { transform: scale(1.2) translate(-1%, -0.5%); }
+        }
+        .animate-kenburns-constant {
+          animation: kenburns-constant 12s linear infinite alternate;
         }
       `}</style>
     </section>
