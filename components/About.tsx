@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useLanguage } from '../LanguageContext';
 
@@ -13,7 +12,7 @@ const About: React.FC = () => {
   ];
 
   return (
-    <section id="about" className="py-32 px-6 md:px-12 lg:px-24 bg-[#141418] border-b border-white/10 scroll-mt-10">
+    <section id="about" className="py-32 px-6 md:px-12 lg:px-24 bg-[#141418] border-b border-white/10">
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
         <div>
           <h2 className="text-6xl md:text-8xl font-bold leading-none mb-10 tracking-tighter">{t.about.title}</h2>

@@ -1,4 +1,3 @@
-
 import React, { memo, useState, useEffect, useMemo } from 'react';
 import { useLanguage } from '../LanguageContext';
 import { PORTFOLIO_DATA } from '../constants';
@@ -30,7 +29,7 @@ const Hero: React.FC<HeroProps> = ({ onNavClick }) => {
         <div className="absolute inset-0 z-0">
           <img 
             src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?q=80&w=2000&auto=format&fit=crop" 
-            alt="" 
+            alt="Fundo ambiental Tulio Ricci Audio Post" 
             className="w-full h-full object-cover opacity-20 brightness-[0.3] saturate-[0.3] scale-110"
           />
         </div>
@@ -46,7 +45,7 @@ const Hero: React.FC<HeroProps> = ({ onNavClick }) => {
             >
               <img 
                 src={thumb} 
-                alt="" 
+                alt={`Trabalho de Áudio Publicitário ${idx + 1}`} 
                 className="w-full h-full object-cover mix-blend-lighten brightness-[0.7] saturate-[0.9] animate-kenburns-constant"
                 style={{ 
                   willChange: 'transform, opacity',
@@ -62,10 +61,7 @@ const Hero: React.FC<HeroProps> = ({ onNavClick }) => {
         <div className="absolute inset-0 z-20 bg-[radial-gradient(circle_at_60%_50%,_transparent_0%,_#0E0E11_95%)]"></div>
         <div className="absolute inset-0 z-20 bg-gradient-to-t from-[#0E0E11] via-transparent to-transparent opacity-95"></div>
         
-        {/* Glow Azul Sutil */}
         <div className="absolute -top-[10%] -left-[5%] w-[60%] h-[70%] bg-[radial-gradient(circle,_rgba(100,120,180,0.12)_0%,_transparent_70%)] blur-[120px] animate-pulse pointer-events-none z-20" style={{ animationDuration: '10s' }}></div>
-        
-        {/* Textura de Grão Profissional */}
         <div className="absolute inset-0 z-25 opacity-[0.05] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
       </div>
 
@@ -116,7 +112,6 @@ const Hero: React.FC<HeroProps> = ({ onNavClick }) => {
           0% { transform: translateX(-100%); }
           100% { transform: translateX(100%); }
         }
-        /* Animação constante aplicada a todas as camadas para evitar saltos na transição */
         @keyframes kenburns-constant {
           0% { transform: scale(1.05) translate(0, 0); }
           100% { transform: scale(1.2) translate(-1%, -0.5%); }

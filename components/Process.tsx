@@ -1,4 +1,3 @@
-
 import React, { memo } from 'react';
 import { PROCESS_STEPS } from '../constants';
 import { useLanguage } from '../LanguageContext';
@@ -8,7 +7,7 @@ const Process: React.FC = () => {
   const currentSteps = PROCESS_STEPS[language];
 
   return (
-    <section id="process" className="py-32 px-6 md:px-12 lg:px-24 bg-[#1A1A1F] border-y border-white/10 scroll-mt-10">
+    <section id="process" className="py-32 px-6 md:px-12 lg:px-24 bg-[#1A1A1F] border-y border-white/10">
       <div className="max-w-6xl mx-auto">
         <div className="mb-20 text-center">
           <h2 className="text-5xl md:text-6xl font-bold mb-6 tracking-tight">{t.process.title}</h2>

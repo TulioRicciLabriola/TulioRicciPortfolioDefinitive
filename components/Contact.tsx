@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useLanguage } from '../LanguageContext';
 
@@ -6,7 +5,7 @@ const Contact: React.FC = () => {
   const { t } = useLanguage();
 
   return (
-    <section id="contact" className="py-24 px-6 md:px-12 lg:px-24 bg-white text-black min-h-[70vh] flex flex-col justify-center scroll-mt-10">
+    <section id="contact" className="py-24 px-6 md:px-12 lg:px-24 bg-white text-black min-h-[70vh] flex flex-col justify-center">
       <div className="max-w-6xl mx-auto w-full">
         <div className="mb-12">
           <h2 className="text-6xl md:text-9xl font-bold uppercase">{t.contact.title}</h2>
@@ -19,7 +18,7 @@ const Contact: React.FC = () => {
           </a>
           <a href="mailto:tulioriccilabriola7@gmail.com" className="group flex items-center justify-between p-8 border border-black/10 hover:bg-black hover:text-white transition-all duration-300">
             <div><h3 className="text-2xl font-bold uppercase">E-mail</h3></div>
-            <div className="flex items-center gap-4"><svg className="w-8 h-8 transition-transform group-hover:scale-110" fill="currentColor" viewBox="0 0 24 24"><path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.517 7.713-9.518-7.713zm5.694 7.188l1.324 1.073c.447.362 1.01.543 1.574.543.564 0 1.128-.181 1.575-.543l1.324-1.072 4.619 5.712h-15.034l4.619-5.712zm6.201-3.442l4.623-3.746v9.458l-4.623-5.712z"/></svg></div>
+            <div className="flex items-center gap-4"><svg className="w-8 h-8 transition-transform group-hover:scale-110" fill="currentColor" viewBox="0 0 24 24"><path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.517 7.713-9.517 7.713-9.518-7.713zm5.694 7.188l1.324 1.073c.447.362 1.01.543 1.574.543.564 0 1.128-.181 1.575-.543l1.324-1.072 4.619 5.712h-15.034l4.619-5.712zm6.201-3.442l4.623-3.746v9.458l-4.623-5.712z"/></svg></div>
           </a>
           <a href="https://www.linkedin.com/in/tulio-ricci-labriola/" target="_blank" rel="noopener noreferrer" className="group flex items-center justify-between p-8 border border-black/10 hover:bg-black hover:text-white transition-all duration-300">
             <div><h3 className="text-2xl font-bold uppercase">LinkedIn</h3></div>

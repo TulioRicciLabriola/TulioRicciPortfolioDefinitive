@@ -1,4 +1,3 @@
-
 import React, { useState, useCallback, memo, useEffect } from 'react';
 import { PORTFOLIO_DATA } from '../constants';
 import { useLanguage } from '../LanguageContext';
@@ -32,7 +31,7 @@ const Portfolio: React.FC = () => {
   }, []);
 
   return (
-    <section id="portfolio" className="relative py-32 px-6 md:px-12 lg:px-24 bg-[#1C1C22] overflow-hidden border-t border-white/5 scroll-mt-10">
+    <section id="portfolio" className="relative py-32 px-6 md:px-12 lg:px-24 bg-[#1C1C22] overflow-hidden border-t border-white/5">
       <div className="absolute inset-0 z-0 pointer-events-none">
          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-[radial-gradient(circle_at_center,_rgba(100,120,255,0.04)_0%,_transparent_60%)]"></div>
          <div className="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-[#0E0E11] to-transparent opacity-40"></div>
@@ -63,16 +62,30 @@ const Portfolio: React.FC = () => {
               <div 
                 className="relative aspect-video overflow-hidden mb-8 bg-black border border-white/10 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.8)] cursor-pointer group-hover:border-white/30 transition-all duration-700"
                 onClick={() => !isPlaying && handlePlay(uniqueId)}
+                title={`Projeto ${item.title} - Tulio Ricci Audio Post`}
               >
                 {isPlaying ? (
                   <div className="w-full h-full bg-black animate-[videoFadeIn_0.5s_ease]">
-                    <video src={item.mp4Url} poster={item.thumbnail} controls autoPlay playsInline preload="auto" className="w-full h-full object-contain">
+                    <video 
+                      src={item.mp4Url} 
+                      poster={item.thumbnail} 
+                      controls 
+                      autoPlay 
+                      playsInline 
+                      preload="auto" 
+                      className="w-full h-full object-contain"
+                    >
                       Seu navegador não suporta a reprodução de vídeo.
                     </video>
                   </div>
                 ) : (
                   <div className="w-full h-full relative overflow-hidden group">
-                    <img src={item.thumbnail} alt={`${item.title} Preview`} loading="lazy" className="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)]" />
+                    <img 
+                      src={item.thumbnail} 
+                      alt={`Thumbnail do projeto de Sound Design para ${item.title} por Tulio Ricci`} 
+                      loading="lazy" 
+                      className="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)]" 
+                    />
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80 group-hover:opacity-40 transition-opacity duration-700"></div>
                     <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                        <div className="w-20 h-20 rounded-full border border-white/20 flex items-center justify-center bg-black/40 backdrop-blur-md group-hover:bg-white group-hover:border-white transition-all duration-500 scale-90 group-hover:scale-100 shadow-2xl">

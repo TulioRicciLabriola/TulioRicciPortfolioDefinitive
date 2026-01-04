@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { LanguageProvider, useLanguage } from './LanguageContext';
 import Hero from './components/Hero';
@@ -25,17 +24,15 @@ const AppContent: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Função centralizada para disparar o tooltip com delay de 3s
   const triggerTooltipWithDelay = useCallback(() => {
     if (!tooltipActivated.current) {
       tooltipActivated.current = true;
       appearanceTimeoutRef.current = window.setTimeout(() => {
         setShowWhatsappTooltip(true);
-      }, 3000); // 3 segundos de timing solicitado
+      }, 3000);
     }
   }, []);
 
-  // Timer de 30 segundos para o Tooltip (Inatividade)
   useEffect(() => {
     const timer = setTimeout(() => {
       triggerTooltipWithDelay();
@@ -43,7 +40,6 @@ const AppContent: React.FC = () => {
     return () => clearTimeout(timer);
   }, [triggerTooltipWithDelay]);
 
-  // Observer para seções (Trigger do Tooltip)
   useEffect(() => {
     const observerOptions = {
       root: null,
@@ -69,7 +65,6 @@ const AppContent: React.FC = () => {
     return () => observer.disconnect();
   }, [triggerTooltipWithDelay]);
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = 'hidden';
@@ -82,23 +77,33 @@ const AppContent: React.FC = () => {
     e.preventDefault();
     setIsMenuOpen(false);
     const element = document.getElementById(id);
+    const header = document.querySelector('nav');
+    
     if (element) {
-      element.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
+      const headerHeight = header ? header.offsetHeight : 0;
+      const elementPosition = element.getBoundingClientRect().top;
+      /**
+       * Cálculo dinâmico ajustado:
+       * Aumentamos o valor de compensação para +45px (ajuste fino solicitado) 
+       * para garantir que a rolagem "desça mais" e alinhe o topo da seção 
+       * perfeitamente abaixo do menu fixo.
+       */
+      const offsetPosition = elementPosition + window.pageYOffset - headerHeight + 45;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
       });
     }
   }, []);
 
   const handleWhatsAppMouseEnter = () => {
-    // Se o usuário já interagiu, limpamos timers pendentes de aparição automática
     if (appearanceTimeoutRef.current) {
       window.clearTimeout(appearanceTimeoutRef.current);
     }
   };
 
   const handleWhatsAppMouseLeave = () => {
-    // Ao sair do ícone, o texto some e a função "reseta" para poder disparar de novo
     setShowWhatsappTooltip(false);
     tooltipActivated.current = false;
     if (appearanceTimeoutRef.current) {
