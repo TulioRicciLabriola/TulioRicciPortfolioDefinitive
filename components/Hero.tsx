@@ -12,10 +12,17 @@ const Hero: React.FC<HeroProps> = ({ onNavClick }) => {
   const [currentThumbIndex, setCurrentThumbIndex] = useState(0);
 
   const thumbnails = useMemo(() => {
-    // Filtra IDs específicos: 5 (Parceiro Magalu), 11 (Lu from Magalu), 4 (Santander SMusic)
+    // Filtra IDs específicos para o showreel: 
+    // 5 (Parceiro Magalu), 11 (Lu from Magalu), 4 (Santander SMusic), 12 (Visa Estilista)
+    // O item ID '1' (Vivo 5G) permanece como o primeiro da lista devido à ordem em PORTFOLIO_DATA.
     return PORTFOLIO_DATA[language]
-      .filter(item => !['5', '11', '4'].includes(item.id))
+      .filter(item => !['5', '11', '4', '12'].includes(item.id))
       .map(item => item.thumbnail);
+  }, [language]);
+
+  useEffect(() => {
+    // Força o reset para o primeiro slide (Vivo 5G) quando trocar o idioma ou ao montar
+    setCurrentThumbIndex(0);
   }, [language]);
 
   useEffect(() => {
