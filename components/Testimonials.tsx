@@ -8,8 +8,8 @@ const Testimonials: React.FC = () => {
   const currentTestimonials = TESTIMONIALS_DATA[language];
 
   return (
-    <section className="py-24 px-6 md:px-12 lg:px-24 bg-[#1D1D23] border-b border-white/10 relative overflow-hidden">
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none grayscale brightness-0">
+    <section className="pb-16 pt-0 px-6 md:px-12 lg:px-24 bg-[#1A1A1F] border-b border-white/10 relative overflow-hidden">
+      <div className="absolute inset-0 opacity-[0.02] pointer-events-none grayscale brightness-0">
           <img 
             src="https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=2070&auto=format&fit=crop" 
             className="w-full h-full object-cover object-bottom" 

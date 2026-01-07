@@ -1,3 +1,4 @@
+
 import React, { memo, useState, useEffect, useMemo } from 'react';
 import { useLanguage } from '../LanguageContext';
 import { PORTFOLIO_DATA } from '../constants';
@@ -11,7 +12,10 @@ const Hero: React.FC<HeroProps> = ({ onNavClick }) => {
   const [currentThumbIndex, setCurrentThumbIndex] = useState(0);
 
   const thumbnails = useMemo(() => {
-    return PORTFOLIO_DATA[language].map(item => item.thumbnail);
+    // Filtra IDs específicos: 5 (Parceiro Magalu), 11 (Lu from Magalu), 4 (Santander SMusic)
+    return PORTFOLIO_DATA[language]
+      .filter(item => !['5', '11', '4'].includes(item.id))
+      .map(item => item.thumbnail);
   }, [language]);
 
   useEffect(() => {

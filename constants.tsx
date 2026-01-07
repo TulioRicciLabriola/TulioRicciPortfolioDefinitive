@@ -25,15 +25,16 @@ export const TRANSLATIONS = {
     },
     about: {
       title: 'SOBRE',
-      p1: 'Mais de 10 anos de expertise em finalização de áudio publicitário, com foco em agilidade, consistência e fidelidade ao conceito criativo.',
-      p2: 'Atuo em sintonia com os ritmos e exigências das grandes agências, compreendendo o que realmente funciona no fluxo de aprovação. Minha prioridade é o resultado final: som limpo, impactante e tecnicamente impecável.',
-      item1Title: 'Prazos de Agência',
-      item1Desc: 'Domínio total do cronograma publicitário, sem atrasos ou surpresas.',
-      item2Title: 'Comunicação Direta',
-      item2Desc: 'Alinhamento objetivo com produtoras e criativos, eliminando ruídos.',
-      item3Title: 'Excelência Técnica',
-      item3Desc: 'Loudness e mixagem otimizados para todos os meios (TV, Rádio e Web).',
-      quote: '"Não entrego apenas áudio; projeto a clareza sonora que a sua mensagem exige."'
+      subtitle: 'Engenheiro de Som, Coordenador e Arquiteto de Inovação em IA.',
+      intro: 'Com 9 anos de atuação estratégica na Comando S Áudio, sou peça-chave na entrega técnica de campanhas globais para marcas como Samsung, Volkswagen e Magazine Luiza. Minha expertise une a engenharia de som clássica às tecnologias emergentes, garantindo agilidade extrema e precisão técnica em mixagem e masterização para broadcast.\n\nComo pioneiro na integração de IA Generativa (Síntese Neural, Voice Cloning e DSP), viabilizo projetos de alta complexidade que desafiam os limites do áudio tradicional — como o resgate vocal do case Cartola (Betano).',
+      awardsTitle: 'RECONHECIMENTO & PRÊMIOS',
+      awards: [
+        { label: 'INOVAÇÃO (2024)', text: '🏅 Destaque Meio & Mensagem pelo Case Cartola (IA).' },
+        { label: 'CANNES LIONS', text: '🏆 Leão de Ouro com "Lu From Magalu".' },
+        { label: 'PROFISSIONAIS DO ANO (GLOBO)', text: '🏆 Vencedor Nacional e finalizador de 4 edições do jingle de Final de Ano.' },
+        { label: 'EL OJO DE IBEROAMÉRICA', text: '🥉 Bronze com "Faces of Carnival".' }
+      ],
+      quote: '"Não se trata de finalizar o áudio. Se trata de assinar a qualidade final da sua história."'
     },
     contact: {
       title: 'CONTATO',
@@ -68,15 +69,16 @@ export const TRANSLATIONS = {
     },
     about: {
       title: 'ABOUT',
-      p1: 'Over 10 years of expertise in advertising audio finishing, focused on agility, consistency and respect for the creative concept.',
-      p2: 'I work in sync with the high-pressure environment of top agencies, understanding what truly works in the approval workflow. My priority is the final result: clean, impactful and technically flawless sound.',
-      item1Title: 'Agency Deadlines',
-      item1Desc: 'Complete mastery of the advertising schedule, without delays or surprises.',
-      item2Title: 'Direct Communication',
-      item2Desc: 'Objective alignment with production houses and creatives, eliminating noise.',
-      item3Title: 'Technical Excellence',
-      item3Desc: 'Optimized loudness and mixing for all media (TV, Radio and Web).',
-      quote: '"I don\'t just deliver audio; I project the sonic clarity your message demands."'
+      subtitle: 'Sound Engineer, Coordinator and AI Innovation Architect.',
+      intro: 'With 9 years of strategic performance at Comando S Áudio, I am a key player in the technical delivery of global campaigns for brands like Samsung, Volkswagen, and Magazine Luiza. My expertise blends classic sound engineering with emerging technologies, ensuring extreme agility and technical precision in mixing and mastering for broadcast.\n\nAs a pioneer in Generative AI integration (Neural Synthesis, Voice Cloning, and DSP), I enable high-complexity projects that push the boundaries of traditional audio — such as the vocal restoration for the Cartola (Betano) case.',
+      awardsTitle: 'RECOGNITION & AWARDS',
+      awards: [
+        { label: 'INNOVATION (2024)', text: '🏅 Meio & Mensagem Highlight for Case Cartola (AI).' },
+        { label: 'CANNES LIONS', text: '🏆 Gold Lion for "Lu From Magalu".' },
+        { label: 'PROFISSIONAIS DO ANO (GLOBO)', text: '🏆 National Winner and audio finisher for 4 Year-End jingle editions.' },
+        { label: 'EL OJO DE IBEROAMÉRICA', text: '🥉 Bronze for "Faces of Carnival".' }
+      ],
+      quote: '"It\'s not just about finishing the audio. It\'s about signing the final quality of your story."'
     },
     contact: {
       title: 'CONTACT',
@@ -104,30 +106,16 @@ export const PORTFOLIO_DATA: Record<'pt' | 'en', PortfolioItem[]> = {
     { 
       id: '2', 
       title: 'Itaipava – Carnaval 2025', 
-      description: 'Mixagem, tratamento de som direto com IA e sound design para o filme de Carnaval com Ivete Sangalo. Clima de rua, percussão quente e voz em destaque para broadcast.', 
+      description: 'Mixagem, tratamento de som direto com IA e sound design para o filme de Carnaval com Ivete Sangalo. Percussão quente e voz em destaque.', 
       mp4Url: `${BASE_URL}/videos/ITAIPAVA%20CARNAVAL%202025.mp4`, 
       thumbnail: `${BASE_URL}/thumbnails/THUMB_ITAIPAVA%20CARNAVAL%202025.png`
     },
     { 
-      id: '3', 
-      title: 'Mycon – Consórcio', 
-      description: 'Tratamento de som direto, sound design e finalização para campanha nacional. Tom confiante, discurso direto e presença para varejo financeiro.', 
-      mp4Url: `${BASE_URL}/videos/MYCON%20CONSORCIO.mp4`, 
-      thumbnail: `${BASE_URL}/thumbnails/THUMB_MYCON%20CONSORCIO.png`
-    },
-    { 
-      id: '4', 
-      title: 'Santander – SMusic', 
-      description: 'Sound design e mixagem para a plataforma musical do Santander. Estética pop, dinâmica musical e identidade jovem de marca.', 
-      mp4Url: `${BASE_URL}/videos/SANTANDER%20SMUSIC.mp4`, 
-      thumbnail: `${BASE_URL}/thumbnails/THUMB_SANTANDER%20SMUSIC.png`
-    },
-    { 
-      id: '5', 
-      title: 'Magazine Luiza – Parceiro Magalu', 
-      description: 'Finalização técnica para campanha nacional de varejo. Comunicação próxima, ritmo ágil e clareza total de mensagem.', 
-      mp4Url: `${BASE_URL}/videos/MAGAZINE%20LUIZA%20PARCEIRO%20MAGALU.mp4`, 
-      thumbnail: `${BASE_URL}/thumbnails/THUMB_MAGAZINE%20LUIZA%20PARCEIRO%20MAGALU.png`
+      id: '11', 
+      title: 'MAGAZINE LUIZA - LU FROM MAGALU', 
+      description: 'Mixagem e Sound Design do filme vencedor do Festival Cannes levando Leão de Ouro na categoria Social & Influencer', 
+      mp4Url: `${BASE_URL}/videos/LU%20FROM%20MAGALU.mp4`, 
+      thumbnail: `${BASE_URL}/thumbnails/THUMB_LU%20FROM%20MAGALU.png`
     },
     { 
       id: '6', 
@@ -137,62 +125,55 @@ export const PORTFOLIO_DATA: Record<'pt' | 'en', PortfolioItem[]> = {
       thumbnail: `${BASE_URL}/thumbnails/THUMB_SHOPEE%201111%20TERRY%20CREWS.png`
     },
     { 
-      id: '7', 
-      title: 'Vivo – 5G Case Study', 
-      description: 'Processo técnico de finalização de áudio publicitário.', 
-      mp4Url: `${BASE_URL}/videos/VIVO%20ANA%20CASTELA%205G%20CASE.mp4`, 
-      thumbnail: `${BASE_URL}/thumbnails/THUMB_VIVO%20ANA%20CASTELA%205G%20CASE.png`
+      id: '10', 
+      title: 'Betano – Fizemos História', 
+      description: 'Destaque na categoria Inovação da Meio & Mensagem pela reconstrução da voz do Cartola através de IA.', 
+      mp4Url: `${BASE_URL}/videos/BETANO%20FIZEMOS%20HISTORIA%20CARTOLA.mp4`, 
+      thumbnail: `${BASE_URL}/thumbnails/THUMB_BETANO%20FIZEMOS%20HISTORIA%20CARTOLA.jpg`
     },
     { 
-      id: '8', 
-      title: 'Itaipava – Mix de Carnaval', 
-      description: 'Ajuste de loudness e planos sonoros para broadcast.', 
-      mp4Url: `${BASE_URL}/videos/ITAIPAVA%20CARNAVAL%202025.mp4`, 
-      thumbnail: `${BASE_URL}/thumbnails/THUMB_ITAIPAVA%20CARNAVAL%202025.png`
+      id: '4', 
+      title: 'Santander – SMusic', 
+      description: 'Sound design e mixagem para a plataforma musical do Santander. Estética pop, dinâmica musical e identidade de marca.', 
+      mp4Url: `${BASE_URL}/videos/SANTANDER%20SMUSIC.mp4`, 
+      thumbnail: `${BASE_URL}/thumbnails/THUMB_SANTANDER%20SMUSIC.png`
     },
     { 
-      id: '9', 
-      title: 'Mycon – Audio Finishing', 
-      description: 'Excelência técnica em spots e vídeos digitais.', 
+      id: '3', 
+      title: 'Mycon – Consórcio', 
+      description: 'Tratamento de som direto, sound design e finalização para campanha nacional. Tom confiante e clareza para varejo financeiro.', 
       mp4Url: `${BASE_URL}/videos/MYCON%20CONSORCIO.mp4`, 
       thumbnail: `${BASE_URL}/thumbnails/THUMB_MYCON%20CONSORCIO.png`
+    },
+    { 
+      id: '5', 
+      title: 'Magazine Luiza – Parceiro Magalu', 
+      description: 'Finalização técnica para campanha nacional de varejo. Comunicação próxima, ritmo ágil e clareza total de mensagem.', 
+      mp4Url: `${BASE_URL}/videos/MAGAZINE%20LUIZA%20PARCEIRO%20MAGALU.mp4`, 
+      thumbnail: `${BASE_URL}/thumbnails/THUMB_MAGAZINE%20LUIZA%20PARCEIRO%20MAGALU.png`
     }
   ],
   en: [
     { 
       id: '1', 
       title: 'Vivo – Ana Castela', 
-      description: 'Audio finishing and mixing for the "A Um 5G de Você" campaign. Pop country, youthful energy, and sharp musical timing for TV and digital.', 
+      description: 'Audio finishing and mixing for the "A Um 5G de Você" campaign. Pop country, youthful energy, and sharp musical timing.', 
       mp4Url: `${BASE_URL}/videos/VIVO%20ANA%20CASTELA%205G%20CASE.mp4`, 
       thumbnail: `${BASE_URL}/thumbnails/THUMB_VIVO%20ANA%20CASTELA%205G%20CASE.png`
     },
     { 
       id: '2', 
       title: 'Itaipava – Carnival 2025', 
-      description: 'Mixing, AI-powered field sound treatment, and sound design for the Carnival film with Ivete Sangalo. Street vibe, warm percussion, and highlighted vocals for broadcast.', 
+      description: 'Mixing, AI-powered field sound treatment, and sound design. Warm percussion and highlighted vocals for broadcast.', 
       mp4Url: `${BASE_URL}/videos/ITAIPAVA%20CARNAVAL%202025.mp4`, 
       thumbnail: `${BASE_URL}/thumbnails/THUMB_ITAIPAVA%20CARNAVAL%202025.png`
     },
     { 
-      id: '3', 
-      title: 'Mycon – Consortium', 
-      description: 'Field sound treatment, sound design, and finishing for a national campaign. Confident tone, direct speech, and presence for financial retail.', 
-      mp4Url: `${BASE_URL}/videos/MYCON%20CONSORCIO.mp4`, 
-      thumbnail: `${BASE_URL}/thumbnails/THUMB_MYCON%20CONSORCIO.png`
-    },
-    { 
-      id: '4', 
-      title: 'Santander – SMusic', 
-      description: "Sound design and mixing for Santander's music platform. Pop aesthetics, musical dynamics, and youthful brand identity.", 
-      mp4Url: `${BASE_URL}/videos/SANTANDER%20SMUSIC.mp4`, 
-      thumbnail: `${BASE_URL}/thumbnails/THUMB_SANTANDER%20SMUSIC.png`
-    },
-    { 
-      id: '5', 
-      title: 'Magazine Luiza – Partner Magalu', 
-      description: 'Technical finishing for a national retail campaign. Close communication, agile pace, and total message clarity.', 
-      mp4Url: `${BASE_URL}/videos/MAGAZINE%20LUIZA%20PARCEIRO%20MAGALU.mp4`, 
-      thumbnail: `${BASE_URL}/thumbnails/THUMB_MAGAZINE%20LUIZA%20PARCEIRO%20MAGALU.png`
+      id: '11', 
+      title: 'MAGAZINE LUIZA - LU FROM MAGALU', 
+      description: 'Mixing and Sound Design for the Cannes Lions winning film, receiving Gold Lion in the Social & Influencer category.', 
+      mp4Url: `${BASE_URL}/videos/LU%20FROM%20MAGALU.mp4`, 
+      thumbnail: `${BASE_URL}/thumbnails/THUMB_LU%20FROM%20MAGALU.png`
     },
     { 
       id: '6', 
@@ -202,25 +183,18 @@ export const PORTFOLIO_DATA: Record<'pt' | 'en', PortfolioItem[]> = {
       thumbnail: `${BASE_URL}/thumbnails/THUMB_SHOPEE%201111%20TERRY%20CREWS.png`
     },
     { 
-      id: '7', 
-      title: 'Vivo – 5G Case Study', 
-      description: 'Detailed analysis of professional audio finishing.', 
-      mp4Url: `${BASE_URL}/videos/VIVO%20ANA%20CASTELA%205G%20CASE.mp4`, 
-      thumbnail: `${BASE_URL}/thumbnails/THUMB_VIVO%20ANA%20CASTELA%205G%20CASE.png`
+      id: '10', 
+      title: 'Betano – We Made History', 
+      description: 'Featured in the Innovation category of Meio & Mensagem for the reconstruction of Cartola\'s voice through AI.', 
+      mp4Url: `${BASE_URL}/videos/BETANO%20FIZEMOS%20HISTORIA%20CARTOLA.mp4`, 
+      thumbnail: `${BASE_URL}/thumbnails/THUMB_BETANO%20FIZEMOS%20HISTORIA%20CARTOLA.jpg`
     },
     { 
-      id: '8', 
-      title: 'Itaipava – Broadcast Mix', 
-      description: 'Loudness control and sound staging for national TV.', 
-      mp4Url: `${BASE_URL}/videos/ITAIPAVA%20CARNAVAL%202025.mp4`, 
-      thumbnail: `${BASE_URL}/thumbnails/THUMB_ITAIPAVA%20CARNAVAL%202025.png`
-    },
-    { 
-      id: '9', 
-      title: 'Mycon – Voice Post', 
-      description: 'Dialog cleanup and vocal restoration.', 
-      mp4Url: `${BASE_URL}/videos/MYCON%20CONSORCIO.mp4`, 
-      thumbnail: `${BASE_URL}/thumbnails/THUMB_MYCON%20CONSORCIO.png`
+      id: '4', 
+      title: 'Santander – SMusic', 
+      description: 'Sound design and mixing for Santander\'s music platform. Pop aesthetics, musical dynamics, and brand identity.', 
+      mp4Url: `${BASE_URL}/videos/SANTANDER%20SMUSIC.mp4`, 
+      thumbnail: `${BASE_URL}/thumbnails/THUMB_SANTANDER%20SMUSIC.png`
     }
   ]
 };
