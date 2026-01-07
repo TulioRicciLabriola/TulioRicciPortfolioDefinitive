@@ -20,11 +20,10 @@ const About: React.FC = () => {
       const distanceFromCenter = Math.abs(viewportCenter - elementCenter);
       
       // Quanto mais perto do centro (distância 0), mais saturação (100%)
-      // Quanto mais longe (ex: 500px), menos saturação (0%)
       const maxDistance = 600; 
       const rawSaturation = 1 - Math.min(distanceFromCenter / maxDistance, 1);
       
-      // Aplicar uma curva para suavizar a transição (opcional)
+      // Aplicar uma curva para suavizar a transição
       const easedSaturation = Math.pow(rawSaturation, 1.5);
       
       setSaturation(easedSaturation);
@@ -40,41 +39,40 @@ const About: React.FC = () => {
     <section 
       ref={sectionRef} 
       id="about" 
-      className="py-12 md:py-16 px-6 md:px-12 lg:px-24 bg-[#0E0E11] border-b border-white/5 relative overflow-hidden"
+      className="py-10 md:py-12 px-6 md:px-12 lg:px-24 bg-[#0E0E11] border-b border-white/5 relative overflow-hidden"
     >
-      {/* Background Decor Minimalista */}
-      <div className="absolute top-0 right-[15%] w-[1px] h-full bg-white/[0.02] hidden lg:block"></div>
+      {/* Linha Decorativa Minimalista Vertical */}
+      <div className="absolute top-0 right-[18%] w-[1px] h-full bg-white/[0.02] hidden lg:block"></div>
       
-      {/* Content wrapper com largura estendida para achatar */}
       <div className="max-w-[1440px] mx-auto relative z-10">
         
-        {/* Header Compacto */}
-        <div className="mb-10 md:mb-14 relative">
-          <h2 className="text-6xl md:text-9xl font-bold tracking-tighter text-white uppercase leading-none mb-4">{t.about.title}</h2>
+        {/* Header Compacto e Elegante */}
+        <div className="mb-8 md:mb-12 relative">
+          <h2 className="text-6xl md:text-9xl font-bold tracking-tighter text-white uppercase leading-none mb-3">{t.about.title}</h2>
           <div className="flex items-center gap-6">
-            <div className="w-12 h-[2px] bg-white"></div>
-            <span className="text-[10px] md:text-[14px] font-bold uppercase tracking-[0.3em] text-white/70 block max-w-3xl leading-tight">
+            <div className="w-12 h-[1px] bg-white/30"></div>
+            <span className="text-[10px] md:text-[13px] font-semibold uppercase tracking-[0.25em] text-white/60 block max-w-2xl leading-relaxed">
               {t.about.subtitle}
             </span>
           </div>
         </div>
 
-        {/* Layout Principal: Otimização horizontal máxima */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+        {/* Layout Principal - Imagem ajustada para ser ligeiramente menor */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
           
-          {/* Coluna 1: Imagem com Reação à Centralização */}
+          {/* Coluna 1: Imagem com Saturação Reativa ao Scroll - Ajustado max-width e aspect ratio */}
           <div className="lg:col-span-3">
             <div 
               ref={imageRef}
-              className="relative aspect-[4/5] overflow-hidden bg-[#16161A] border border-white/10 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.8)]"
+              className="relative aspect-square md:aspect-[4/4.5] overflow-hidden bg-[#16161A] border border-white/10 shadow-[0_30px_80px_-15px_rgba(0,0,0,0.9)] transition-transform duration-500 max-w-[280px] lg:max-w-full mx-auto lg:mx-0"
             >
               <img 
                 src="https://raw.githubusercontent.com/TulioRicciLabriola/TulioRicciPortfolio/main/profile/linkedin.jpg" 
                 alt="Tulio Ricci Labriola" 
                 className="w-full h-full object-cover transition-all duration-300 ease-out"
                 style={{ 
-                  filter: `grayscale(${100 - saturation * 100}%) brightness(${0.5 + saturation * 0.5})`,
-                  opacity: 0.5 + saturation * 0.5
+                  filter: `grayscale(${100 - saturation * 100}%) brightness(${0.6 + saturation * 0.4})`,
+                  opacity: 0.6 + saturation * 0.4
                 }}
                 loading="lazy"
               />
@@ -85,29 +83,29 @@ const About: React.FC = () => {
             </div>
           </div>
 
-          {/* Coluna 2: Biografia (Texto Clean e Fluido) */}
-          <div className="lg:col-span-5 flex flex-col pt-2">
-            <div className="text-[15px] md:text-[18px] text-white/85 font-light leading-relaxed tracking-wide border-l border-white/20 pl-8 md:pl-12 whitespace-pre-line italic">
+          {/* Coluna 2: Biografia */}
+          <div className="lg:col-span-5 flex flex-col pt-1">
+            <div className="text-[14px] md:text-[16px] text-white/80 font-light leading-relaxed tracking-wide border-l border-white/20 pl-8 md:pl-10 whitespace-pre-line italic">
               {t.about.intro}
             </div>
           </div>
 
-          {/* Coluna 3: Prêmios (Organização horizontal interna) */}
+          {/* Coluna 3: Reconhecimento */}
           <div className="lg:col-span-4 flex flex-col">
-            <div className="mb-8">
-              <h3 className="text-[12px] font-bold uppercase tracking-[0.4em] text-white mb-4 heading-font">
+            <div className="mb-6 flex items-center gap-4">
+              <h3 className="text-[11px] font-bold uppercase tracking-[0.3em] text-white/90 whitespace-nowrap">
                 {t.about.awardsTitle}
               </h3>
-              <div className="w-full h-[1px] bg-white/20"></div>
+              <div className="flex-1 h-[1px] bg-white/30"></div>
             </div>
 
-            <div className="space-y-8">
+            <div className="space-y-7">
               {t.about.awards.map((award, idx) => (
-                <div key={idx} className="group">
-                  <span className="text-[11px] font-bold text-white/40 uppercase tracking-[0.2em] block mb-2 heading-font transition-colors group-hover:text-white/80">
+                <div key={idx} className="group transition-all">
+                  <span className="text-[10px] font-bold text-white/60 uppercase tracking-[0.15em] block mb-1.5 transition-colors duration-300 group-hover:text-white">
                     {award.label}
                   </span>
-                  <p className="text-[13px] md:text-[15px] text-white/95 font-light leading-snug tracking-tight">
+                  <p className="text-[13px] md:text-[14px] text-white/90 font-light leading-snug tracking-tight transition-colors duration-300 group-hover:text-white">
                     {award.text}
                   </p>
                 </div>
@@ -116,9 +114,9 @@ const About: React.FC = () => {
           </div>
         </div>
 
-        {/* Manifesto Final - Achatado na base */}
-        <div className="mt-14 md:mt-20 pt-10 border-t border-white/5 text-center">
-          <blockquote className="text-2xl md:text-4xl lg:text-5xl font-bold text-white/90 italic tracking-tighter leading-tight max-w-5xl mx-auto">
+        {/* Manifesto Final */}
+        <div className="mt-12 md:mt-14 pt-8 border-t border-white/5 text-center">
+          <blockquote className="text-lg md:text-2xl lg:text-3xl font-bold text-white/90 italic tracking-tighter leading-snug max-w-4xl mx-auto">
             {t.about.quote}
           </blockquote>
         </div>

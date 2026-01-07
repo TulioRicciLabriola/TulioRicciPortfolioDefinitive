@@ -25,8 +25,8 @@ export const TRANSLATIONS = {
     },
     about: {
       title: 'SOBRE',
-      subtitle: 'Engenheiro de Som, Coordenador e Arquiteto de Inovação em IA.',
-      intro: 'Com 9 anos de atuação estratégica na Comando S Áudio, sou peça-chave na entrega técnica de campanhas globais para marcas como Samsung, Volkswagen e Magazine Luiza. Minha expertise une a engenharia de som clássica às tecnologias emergentes, garantindo agilidade extrema e precisão técnica em mixagem e masterização para broadcast.\n\nComo pioneiro na integração de IA Generativa (Síntese Neural, Voice Cloning e DSP), viabilizo projetos de alta complexidade que desafiam os limites do áudio tradicional — como o resgate vocal do case Cartola (Betano).',
+      subtitle: 'Finalizador de Áudio, Coordenador e Arquiteto de Inovação em IA.',
+      intro: 'Com mais de uma década de atuação estratégica no mercado de publicidade, sou peça-chave na finalização técnica de campanhas globais para marcas como Samsung, Volkswagen e Magazine Luiza. Minha expertise une a engenharia de som clássica às tecnologias emergentes, garantindo agilidade e precisão em mixagem e masterização para broadcast.\n\nComo pioneiro na integração de IA Generativa (Síntese Neural, Voice Cloning e DSP), viabilizo projetos de alta complexidade que desafiam os limites do áudio tradicional — como o resgate vocal do case Fizemos História (Betano).',
       awardsTitle: 'RECONHECIMENTO & PRÊMIOS',
       awards: [
         { label: 'INOVAÇÃO (2024)', text: '🏅 Destaque Meio & Mensagem pelo Case Cartola (IA).' },
@@ -34,7 +34,7 @@ export const TRANSLATIONS = {
         { label: 'PROFISSIONAIS DO ANO (GLOBO)', text: '🏆 Vencedor Nacional e finalizador de 4 edições do jingle de Final de Ano.' },
         { label: 'EL OJO DE IBEROAMÉRICA', text: '🥉 Bronze com "Faces of Carnival".' }
       ],
-      quote: '"Não se trata de finalizar o áudio. Se trata de assinar a qualidade final da sua história."'
+      quote: '"Áudio não é sobre preencher o silêncio. É sobre contar histórias com a assinatura sonora que elas precisam para serem lembradas."'
     },
     contact: {
       title: 'CONTATO',
@@ -69,8 +69,8 @@ export const TRANSLATIONS = {
     },
     about: {
       title: 'ABOUT',
-      subtitle: 'Sound Engineer, Coordinator and AI Innovation Architect.',
-      intro: 'With 9 years of strategic performance at Comando S Áudio, I am a key player in the technical delivery of global campaigns for brands like Samsung, Volkswagen, and Magazine Luiza. My expertise blends classic sound engineering with emerging technologies, ensuring extreme agility and technical precision in mixing and mastering for broadcast.\n\nAs a pioneer in Generative AI integration (Neural Synthesis, Voice Cloning, and DSP), I enable high-complexity projects that push the boundaries of traditional audio — such as the vocal restoration for the Cartola (Betano) case.',
+      subtitle: 'Audio Finisher, Coordinator and AI Innovation Architect.',
+      intro: 'With over a decade of strategic performance in the advertising market, I am a key player in the technical finishing of global campaigns for brands like Samsung, Volkswagen, and Magazine Luiza. My expertise blends classic sound engineering with emerging technologies, ensuring agility and precision in mixing and mastering for broadcast.\n\nAs a pioneer in Generative AI integration (Neural Synthesis, Voice Cloning, and DSP), I enable high-complexity projects that push the boundaries of traditional audio — such as the vocal restoration for the "Fizemos História" (Betano) case.',
       awardsTitle: 'RECOGNITION & AWARDS',
       awards: [
         { label: 'INNOVATION (2024)', text: '🏅 Meio & Mensagem Highlight for Case Cartola (AI).' },
@@ -78,7 +78,7 @@ export const TRANSLATIONS = {
         { label: 'PROFISSIONAIS DO ANO (GLOBO)', text: '🏆 National Winner and audio finisher for 4 Year-End jingle editions.' },
         { label: 'EL OJO DE IBEROAMÉRICA', text: '🥉 Bronze for "Faces of Carnival".' }
       ],
-      quote: '"It\'s not just about finishing the audio. It\'s about signing the final quality of your story."'
+      quote: '"Audio is not about filling silence. It is about telling stories with the sonic signature they need to be remembered."'
     },
     contact: {
       title: 'CONTACT',
@@ -195,6 +195,20 @@ export const PORTFOLIO_DATA: Record<'pt' | 'en', PortfolioItem[]> = {
       description: 'Sound design and mixing for Santander\'s music platform. Pop aesthetics, musical dynamics, and brand identity.', 
       mp4Url: `${BASE_URL}/videos/SANTANDER%20SMUSIC.mp4`, 
       thumbnail: `${BASE_URL}/thumbnails/THUMB_SANTANDER%20SMUSIC.png`
+    },
+    { 
+      id: '3', 
+      title: 'Mycon – Financing', 
+      description: 'Field sound treatment, sound design, and finishing for a national campaign. Confident tone and clarity for financial retail.', 
+      mp4Url: `${BASE_URL}/videos/MYCON%20CONSORCIO.mp4`, 
+      thumbnail: `${BASE_URL}/thumbnails/THUMB_MYCON%20CONSORCIO.png`
+    },
+    { 
+      id: '5', 
+      title: 'Magazine Luiza – Parceiro Magalu', 
+      description: 'Technical finishing for a national retail campaign. Close communication, agile pace, and total message clarity.', 
+      mp4Url: `${BASE_URL}/videos/MAGAZINE%20LUIZA%20PARCEIRO%20MAGALU.mp4`, 
+      thumbnail: `${BASE_URL}/thumbnails/THUMB_MAGAZINE%20LUIZA%20PARCEIRO%20MAGALU.png`
     }
   ]
 };

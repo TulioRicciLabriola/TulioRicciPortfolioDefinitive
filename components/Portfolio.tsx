@@ -1,3 +1,4 @@
+
 import React, { useState, useCallback, memo, useEffect } from 'react';
 import { PORTFOLIO_DATA } from '../constants';
 import { useLanguage } from '../LanguageContext';
@@ -29,6 +30,19 @@ const Portfolio: React.FC = () => {
     }));
     setPlayingId(id);
   }, []);
+
+  const toggleShowAll = useCallback(() => {
+    // Resetar o ID de reprodução sempre que alternar a visualização
+    setPlayingId(null);
+    
+    if (showAll) {
+      // Ao "Exibir Menos", removemos o scroll automático para o topo para evitar saltos indesejados
+      // a menos que o usuário explicitamente prefira. Mantendo estático conforme pedido.
+      setShowAll(false);
+    } else {
+      setShowAll(true);
+    }
+  }, [showAll]);
 
   return (
     <section id="portfolio" className="relative py-32 px-6 md:px-12 lg:px-24 bg-[#1C1C22] overflow-hidden border-t border-white/5">
@@ -107,7 +121,11 @@ const Portfolio: React.FC = () => {
       
       {hasMore && (
         <div className="relative z-10 mt-32 flex justify-center">
-          <button type="button" onClick={() => showAll ? (document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' }), setTimeout(() => setShowAll(false), 600)) : setShowAll(true)} className="group relative px-20 py-6 border border-white/10 bg-white/5 text-[11px] font-bold uppercase tracking-[0.5em] hover:border-white transition-all min-w-[300px] rounded-full overflow-hidden shadow-xl">
+          <button 
+            type="button" 
+            onClick={toggleShowAll} 
+            className="group relative px-20 py-6 border border-white/10 bg-white/5 text-[11px] font-bold uppercase tracking-[0.5em] hover:border-white transition-all min-w-[300px] rounded-full overflow-hidden shadow-xl"
+          >
             <span className="relative z-10 transition-colors group-hover:text-black">{showAll ? t.portfolio.showLess : t.portfolio.showMore}</span>
             <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
           </button>
