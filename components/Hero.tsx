@@ -11,24 +11,41 @@ const Hero: React.FC<HeroProps> = ({ onNavClick }) => {
   const { t, language } = useLanguage();
   const [currentThumbIndex, setCurrentThumbIndex] = useState(0);
 
+  // Define explicitly the sequence for the background showreel
   const thumbnails = useMemo(() => {
-    // Filtra IDs específicos para o showreel: 
-    // 5 (Parceiro Magalu), 11 (Lu from Magalu), 4 (Santander SMusic), 12 (Visa Estilista)
-    // O item ID '1' (Vivo 5G) permanece como o primeiro da lista devido à ordem em PORTFOLIO_DATA.
-    return PORTFOLIO_DATA[language]
-      .filter(item => !['5', '11', '4', '12'].includes(item.id))
-      .map(item => item.thumbnail);
+    const data = PORTFOLIO_DATA[language];
+    
+    // Find Vivo 5G (ID: 1) to be the absolute first item
+    const vivoItem = data.find(item => item.id === '1');
+    
+    // Filter others: Exclude Vivo (already added), 
+    // and exclude those the user specifically asked to hide from the background showreel
+    const others = data.filter(item => 
+      item.id !== '1' && 
+      !['5', '11', '4', '12'].includes(item.id)
+    );
+
+    const result = [];
+    if (vivoItem) {
+      result.push(vivoItem.thumbnail);
+    }
+    
+    result.push(...others.map(item => item.thumbnail));
+    return result;
   }, [language]);
 
   useEffect(() => {
-    // Força o reset para o primeiro slide (Vivo 5G) quando trocar o idioma ou ao montar
+    // Reset to index 0 whenever the language changes or the component mounts
     setCurrentThumbIndex(0);
   }, [language]);
 
   useEffect(() => {
+    if (thumbnails.length <= 1) return;
+    
     const interval = setInterval(() => {
       setCurrentThumbIndex((prev) => (prev + 1) % thumbnails.length);
     }, 5000);
+    
     return () => clearInterval(interval);
   }, [thumbnails.length]);
 
@@ -45,18 +62,18 @@ const Hero: React.FC<HeroProps> = ({ onNavClick }) => {
           />
         </div>
 
-        {/* CAMADA 2: Showreel de Thumbnails (Sincronizado e Sem Resets) */}
+        {/* CAMADA 2: Showreel de Thumbnails (Sincronizado) */}
         <div className="absolute inset-0 z-10 overflow-hidden">
           {thumbnails.map((thumb, idx) => (
             <div 
-              key={idx}
+              key={`${idx}-${language}`}
               className={`absolute inset-0 transition-opacity duration-[2500ms] ease-in-out ${
                 idx === currentThumbIndex ? 'opacity-70' : 'opacity-0'
               }`}
             >
               <img 
                 src={thumb} 
-                alt={`Trabalho de Áudio Publicitário ${idx + 1}`} 
+                alt="" 
                 className="w-full h-full object-cover mix-blend-lighten brightness-[0.7] saturate-[0.9] animate-kenburns-constant"
                 style={{ 
                   willChange: 'transform, opacity',
