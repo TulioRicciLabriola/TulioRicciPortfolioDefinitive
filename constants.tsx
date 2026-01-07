@@ -151,6 +151,13 @@ export const PORTFOLIO_DATA: Record<'pt' | 'en', PortfolioItem[]> = {
       description: 'Finalização técnica para campanha nacional de varejo. Comunicação próxima, ritmo ágil e clareza total de mensagem.', 
       mp4Url: `${BASE_URL}/videos/MAGAZINE%20LUIZA%20PARCEIRO%20MAGALU.mp4`, 
       thumbnail: `${BASE_URL}/thumbnails/THUMB_MAGAZINE%20LUIZA%20PARCEIRO%20MAGALU.png`
+    },
+    { 
+      id: '12', 
+      title: 'Visa – Estilista', 
+      description: 'Mixagem e sound design para o filme Visa Estilista. Foco em detalhes sonoros que complementam a estética visual e o ritmo da montagem.', 
+      mp4Url: `${BASE_URL}/videos/VISA%20ESTILISTA.mp4`, 
+      thumbnail: `${BASE_URL}/thumbnails/THUMB_VISA%20ESTILISTA.png`
     }
   ],
   en: [
@@ -209,6 +216,13 @@ export const PORTFOLIO_DATA: Record<'pt' | 'en', PortfolioItem[]> = {
       description: 'Technical finishing for a national retail campaign. Close communication, agile pace, and total message clarity.', 
       mp4Url: `${BASE_URL}/videos/MAGAZINE%20LUIZA%20PARCEIRO%20MAGALU.mp4`, 
       thumbnail: `${BASE_URL}/thumbnails/THUMB_MAGAZINE%20LUIZA%20PARCEIRO%20MAGALU.png`
+    },
+    { 
+      id: '12', 
+      title: 'Visa – Stylist', 
+      description: 'Mixing and sound design for the Visa Stylist film. Focused on sonic details that complement the visual aesthetics and editing rhythm.', 
+      mp4Url: `${BASE_URL}/videos/VISA%20ESTILISTA.mp4`, 
+      thumbnail: `${BASE_URL}/thumbnails/THUMB_VISA%20ESTILISTA.png`
     }
   ]
 };

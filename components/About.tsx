@@ -57,14 +57,14 @@ const About: React.FC = () => {
           </div>
         </div>
 
-        {/* Layout Principal - Imagem ajustada para ser ligeiramente menor */}
+        {/* Layout Principal - Imagem ajustada para ser menor e alinhar com o texto */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
           
-          {/* Coluna 1: Imagem com Saturação Reativa ao Scroll - Ajustado max-width e aspect ratio */}
+          {/* Coluna 1: Imagem com Saturação Reativa ao Scroll */}
           <div className="lg:col-span-3">
             <div 
               ref={imageRef}
-              className="relative aspect-square md:aspect-[4/4.5] overflow-hidden bg-[#16161A] border border-white/10 shadow-[0_30px_80px_-15px_rgba(0,0,0,0.9)] transition-transform duration-500 max-w-[280px] lg:max-w-full mx-auto lg:mx-0"
+              className="relative aspect-square md:aspect-[4/4.5] overflow-hidden bg-[#16161A] border border-white/10 shadow-[0_30px_80px_-15px_rgba(0,0,0,0.9)] transition-transform duration-500 max-w-[200px] md:max-w-[240px] lg:max-w-[280px] mx-auto lg:mx-0"
             >
               <img 
                 src="https://raw.githubusercontent.com/TulioRicciLabriola/TulioRicciPortfolio/main/profile/linkedin.jpg" 

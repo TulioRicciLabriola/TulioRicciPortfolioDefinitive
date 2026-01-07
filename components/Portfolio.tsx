@@ -1,5 +1,5 @@
 
-import React, { useState, useCallback, memo, useEffect } from 'react';
+import React, { useState, useCallback, memo, useEffect, useMemo } from 'react';
 import { PORTFOLIO_DATA } from '../constants';
 import { useLanguage } from '../LanguageContext';
 
@@ -8,7 +8,7 @@ const Portfolio: React.FC = () => {
   const [showAll, setShowAll] = useState(false);
   const [playingId, setPlayingId] = useState<string | null>(null);
   
-  const currentData = PORTFOLIO_DATA[language];
+  const currentData = useMemo(() => PORTFOLIO_DATA[language], [language]);
   const itemsPerPage = 6;
   
   const displayedItems = showAll ? currentData : currentData.slice(0, itemsPerPage);
@@ -32,17 +32,10 @@ const Portfolio: React.FC = () => {
   }, []);
 
   const toggleShowAll = useCallback(() => {
-    // Resetar o ID de reprodução sempre que alternar a visualização
     setPlayingId(null);
-    
-    if (showAll) {
-      // Ao "Exibir Menos", removemos o scroll automático para o topo para evitar saltos indesejados
-      // a menos que o usuário explicitamente prefira. Mantendo estático conforme pedido.
-      setShowAll(false);
-    } else {
-      setShowAll(true);
-    }
-  }, [showAll]);
+    setShowAll(prev => !prev);
+    // Não scrolamos para cima, mantendo a posição atual do usuário conforme solicitado
+  }, []);
 
   return (
     <section id="portfolio" className="relative py-32 px-6 md:px-12 lg:px-24 bg-[#1C1C22] overflow-hidden border-t border-white/5">
@@ -68,7 +61,7 @@ const Portfolio: React.FC = () => {
 
       <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-20">
         {displayedItems.map((item, index) => {
-          const uniqueId = `video-${item.id}-${index}`;
+          const uniqueId = `video-${item.id}-${index}-${language}`; // Incluído language no ID para evitar conflitos de renderização
           const isPlaying = playingId === uniqueId;
 
           return (
