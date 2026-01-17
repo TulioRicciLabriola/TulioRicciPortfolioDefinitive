@@ -25,8 +25,9 @@ export const TRANSLATIONS = {
     },
     about: {
       title: 'SOBRE',
+      label: 'A Mente por Trás do Som',
       subtitle: 'Finalizador de Áudio, Coordenador e Arquiteto de Inovação em IA.',
-      intro: 'Com mais de uma década de atuação estratégica no mercado de publicidade, sou peça-chave na finalização técnica de campanhas globais para marcas como Samsung, Volkswagen e Magazine Luiza. Minha expertise une a engenharia de som clássica às tecnologias emergentes, garantindo agilidade e precisão em mixagem e masterização para broadcast.\n\nComo pioneiro na integração de IA Generativa (Síntese Neural, Voice Cloning e DSP), viabilizo projetos de alta complexidade que desafiam os limites do áudio tradicional — como o resgate vocal do case Fizemos História (Betano).',
+      intro: 'Com mais de uma década de atuação estratégica no mercado de publicidade, sou peça-chave na finalização técnica de campanhas globais para marcas como Samsung, Volkswagen e Magazine Luiza. Minha expertise une a engenharia de som clássica às tecnologias emergentes, garantindo agilidade e precisão em mixagem e masterização para broadcast.\n\nComo pioneiro na integração de IA Generativa (Síntese Neural, Voice Cloning e DSP), viabilizo projetos de alta com plexidade que desafiam os limites do áudio tradicional — como o resgate vocal do case Fizemos História (Betano).',
       awardsTitle: 'RECONHECIMENTO & PRÊMIOS',
       awards: [
         { label: 'INOVAÇÃO (2024)', text: '🏅 Destaque Meio & Mensagem pelo Case Cartola (IA).' },
@@ -34,7 +35,7 @@ export const TRANSLATIONS = {
         { label: 'PROFISSIONAIS DO ANO (GLOBO)', text: '🏆 Vencedor Nacional e finalizador de 4 edições do jingle de Final de Ano.' },
         { label: 'EL OJO DE IBEROAMÉRICA', text: '🥉 Bronze com "Faces of Carnival".' }
       ],
-      quote: '"Áudio não é sobre preencher o silêncio. É sobre contar histórias com a assinatura sonora que elas precisam para serem lembradas."'
+      quote: 'Áudio não é sobre preencher o silêncio. É sobre contar histórias com a assinatura sonora que elas precisam para serem lembradas.'
     },
     contact: {
       title: 'CONTATO',
@@ -69,6 +70,7 @@ export const TRANSLATIONS = {
     },
     about: {
       title: 'ABOUT',
+      label: 'The Mind Behind the Sound',
       subtitle: 'Audio Finisher, Coordinator and AI Innovation Architect.',
       intro: 'With over a decade of strategic performance in the advertising market, I am a key player in the technical finishing of global campaigns for brands like Samsung, Volkswagen, and Magazine Luiza. My expertise blends classic sound engineering with emerging technologies, ensuring agility and precision in mixing and mastering for broadcast.\n\nAs a pioneer in Generative AI integration (Neural Synthesis, Voice Cloning, and DSP), I enable high-complexity projects that push the boundaries of traditional audio — such as the vocal restoration for the "Fizemos História" (Betano) case.',
       awardsTitle: 'RECOGNITION & AWARDS',
@@ -78,7 +80,7 @@ export const TRANSLATIONS = {
         { label: 'PROFISSIONAIS DO ANO (GLOBO)', text: '🏆 National Winner and audio finisher for 4 Year-End jingle editions.' },
         { label: 'EL OJO DE IBEROAMÉRICA', text: '🥉 Bronze for "Faces of Carnival".' }
       ],
-      quote: '"Audio is not about filling silence. It is about telling stories with the sonic signature they need to be remembered."'
+      quote: 'Audio is not about filling silence. It is about telling stories with the sonic signature they need to be remembered.'
     },
     contact: {
       title: 'CONTACT',
