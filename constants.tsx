@@ -45,14 +45,6 @@ export const TRANSLATIONS = {
       linkedinLabel: '',
       footerRights: '© 2025 • Tulio Ricci',
       floatCta: 'Vamos conversar?'
-    },
-    slider: {
-      title: 'A restauração de áudio não é mágica,',
-      titleHighlight: 'é técnica.',
-      subtitle: 'Arraste e veja como salvamos um set impossível.',
-      raw: 'Raw (Original)',
-      treated: 'Treated (Final)',
-      crossfade: 'Crossfade'
     }
   },
   en: {
@@ -98,14 +90,6 @@ export const TRANSLATIONS = {
       linkedinLabel: '',
       footerRights: '© 2025 • Tulio Ricci',
       floatCta: 'Let\'s talk?'
-    },
-    slider: {
-      title: 'Audio restoration is not magic,',
-      titleHighlight: 'it\'s technique.',
-      subtitle: 'Drag and see how we saved an impossible set.',
-      raw: 'Raw (Original)',
-      treated: 'Treated (Final)',
-      crossfade: 'Crossfade'
     }
   }
 };
